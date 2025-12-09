@@ -133,13 +133,31 @@ Box Plot memperlihatkan distribusi harga berdasarkan kategori:"Dengan melihat ga
 
 Tujuan: Visualisasi "Pamungkas" yang menggabungkan 4 dimensi data sekaligus untuk melihat tren pasar secara holistik.Node: Scatter Plot (Plotly)Konfigurasi 4 Dimensi:Sumbu X (Penyebab): Age_08_04 (Umur Mobil).Sumbu Y (Akibat): Price (Harga Jual).Warna (Kategori): Fuel_Type (Bensin/Diesel).Ukuran (Indikator Tambahan): KM (Jarak Tempuh) atau HP.Interpretasi Hasil:Grafik ini menceritakan pola depresiasi yang kompleks:"Terlihat tren titik-titik yang menurun dari kiri-atas ke kanan-bawah, mengonfirmasi bahwa mobil baru berharga mahal dan mobil tua berharga murah. Namun, adanya bola-bola besar (KM Tinggi) yang posisinya lebih rendah dibanding bola kecil pada umur yang sama menunjukkan bahwa Jarak Tempuh yang tinggi mempercepat penurunan harga, terlepas dari tahun pembuatannya."
 
-
-## 📊 BAB 5: Visualisasi & Data Storytelling
-
 ---
 
+## 📊 BAB 5: Visualisasi & Data Storytelling
 Mengungkap wawasan bisnis melalui visualisasi tingkat lanjut.
 
-5.1 Hierarki Fitur (Sunburst Chart)Menelusuri keterkaitan antara fitur mewah.Setting Node: Hierarchy = Fuel_Type $\rightarrow$ Status_Transmisi $\rightarrow$ Status_AC.Analisis:Visualisasi menunjukkan bahwa varian Automatic memiliki probabilitas sangat tinggi untuk dilengkapi AC dan Sebaliknya, varian Manual memiliki distribusi fitur yang lebih acak.Insight: Varian Automatic diposisikan sebagai produk "Full Spec".
+## 5.1 Hierarki Fitur (Sunburst Chart)
+Menelusuri keterkaitan antara fitur mewah.Setting Node: Hierarchy = Fuel_Type $\rightarrow$ Status_Transmisi $\rightarrow$ Status_AC.Analisis:Visualisasi menunjukkan bahwa varian Automatic memiliki probabilitas sangat tinggi untuk dilengkapi AC dan Sebaliknya, varian Manual memiliki distribusi fitur yang lebih acak.Insight: Varian Automatic diposisikan sebagai produk "Full Spec".
 
-5.2 Evolusi Stok (Stacked Area Chart)Melihat tren manufaktur berdasarkan tahun pembuatan.Setting Node: GroupBy (Year) $\rightarrow$ Pivoting (Fuel) $\rightarrow$ Stacked Area Chart.Analisis:Era 1998-1999: Pasar didominasi total oleh mesin Petrol (Bensin).Era 2000-2004: Terjadi lonjakan signifikan pada produksi mobil Diesel (area warna gelap melebar).Insight: Data mencerminkan perubahan tren pasar Eropa yang mulai beralih ke mesin Diesel efisien pada awal milenium.
+## 5.2 Evolusi Stok (Stacked Area Chart)
+Melihat tren manufaktur berdasarkan tahun pembuatan.Setting Node: GroupBy (Year) $\rightarrow$ Pivoting (Fuel) $\rightarrow$ Stacked Area Chart.Analisis:Era 1998-1999: Pasar didominasi total oleh mesin Petrol (Bensin).Era 2000-2004: Terjadi lonjakan signifikan pada produksi mobil Diesel (area warna gelap melebar).Insight: Data mencerminkan perubahan tren pasar Eropa yang mulai beralih ke mesin Diesel efisien pada awal milenium.
+
+## Hasil Visualisasi
+
+# 1. Cluster
+[Scatter Plot Cluster](https://github.com/c14250143-hub/UAS/blob/main/analisis/Scatter%20Plot%20(CLuster).png)
+
+# 2. Prediksi rata-rata dari perbandingan sebuah harga
+[Score](https://github.com/c14250143-hub/UAS/blob/main/analisis/Tabel%20Skor%20(Prediksi).png)
+
+[Scatter plot](https://github.com/c14250143-hub/UAS/blob/main/analisis/Scatter%20Plot%20(prediksi).png)
+
+[Scatter plot](https://github.com/c14250143-hub/UAS/blob/main/analisis/Scatter%20Plot%20(prediksi2).png)
+
+
+# 3. Produksi dari Manufaktur dan Garansi
+[histogram](https://github.com/c14250143-hub/UAS/blob/main/analisis/Histogram%20(produksi%20mobil).png)
+
+[score](https://github.com/c14250143-hub/UAS/blob/main/analisis/Score%20(prediksi%20data%20manufaktur).png)
