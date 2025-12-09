@@ -132,7 +132,7 @@ ShutterstockGrafik Box Plot memperlihatkan distribusi harga berdasarkan kategori
 Tujuan: Visualisasi "Pamungkas" yang menggabungkan 4 dimensi data sekaligus untuk melihat tren pasar secara holistik.Node: Scatter Plot (Plotly)Konfigurasi 4 Dimensi:Sumbu X (Penyebab): Age_08_04 (Umur Mobil).Sumbu Y (Akibat): Price (Harga Jual).Warna (Kategori): Fuel_Type (Bensin/Diesel).Ukuran (Indikator Tambahan): KM (Jarak Tempuh) atau HP.Interpretasi Hasil:Grafik ini menceritakan pola depresiasi yang kompleks:"Terlihat tren titik-titik yang menurun dari kiri-atas ke kanan-bawah, mengonfirmasi bahwa mobil baru berharga mahal dan mobil tua berharga murah. Namun, adanya bola-bola besar (KM Tinggi) yang posisinya lebih rendah dibanding bola kecil pada umur yang sama menunjukkan bahwa Jarak Tempuh yang tinggi mempercepat penurunan harga, terlepas dari tahun pembuatannya."
 
 
-📊 BAB 5: Visualisasi & Data Storytelling 
+## 📊 BAB 5: Visualisasi & Data Storytelling 
 
 Mengungkap wawasan bisnis melalui visualisasi tingkat lanjut.
 
