@@ -18,9 +18,11 @@ graph LR
     B -->|Select Features| C[🧹 Missing Value]
     C -->|Clean Data| D[🔠 Rule Engine]
 
-1.2 Detail Teknis NodeNode KNIMEFungsi & KonfigurasiCSV ReaderMembaca dataset ToyotaCorolla.csv. Separator diset ke koma (,) dan Header Row diaktifkan.Column FilterSeleksi Fitur: Membuang kolom yang tidak relevan secara statistik (Id, Model, Cylinders) dan mempertahankan kolom kunci (Price, Age_08_04, KM, HP, Fuel_Type, Quarterly_Tax).Rule EngineTransformasi Data: Mengubah data kategorikal biner menjadi label deskriptif.  Logika: $Automatic$ = 1 => "Matic", $Automatic$ = 0 => "Manual".
+### 1.2 Detail Teknis NodeNode KNIMEFungsi & KonfigurasiCSV ReaderMembaca dataset ToyotaCorolla.csv. Separator diset ke koma (,) dan Header Row diaktifkan.Column FilterSeleksi Fitur: Membuang kolom yang tidak relevan secara statistik (Id, Model, Cylinders) dan mempertahankan kolom kunci (Price, Age_08_04, KM, HP, Fuel_Type, Quarterly_Tax).Rule EngineTransformasi Data: Mengubah data kategorikal biner menjadi label deskriptif.  Logika: $Automatic$ = 1 => "Matic", $Automatic$ = 0 => "Manual".
 
-BAB 2: Prediksi Harga (Supervised Learning)Membangun model Regresi Linear untuk memprediksi harga jual kembali (Resale Value).2.1 Arsitektur ModelTujuan: Menemukan rumus matematika $Y = aX + b$ dimana $Y$ adalah Harga.Code snippetgraph TD
+## BAB 2: Prediksi Harga (Supervised Learning)Membangun model Regresi Linear untuk memprediksi harga jual kembali (Resale Value).2.1 Arsitektur ModelTujuan: Menemukan rumus matematika $Y = aX + b$ dimana $Y$ adalah Harga.Code snippetgraph TD
+-
+
     Data[Data Bersih] --> Encode[🔢 One to Many]
     Encode --> Split[✂ Partitioning 80:20]
     
@@ -32,26 +34,22 @@ BAB 2: Prediksi Harga (Supervised Learning)Membangun model Regresi Linear untuk 
     Predictor --> Scorer[📊 Numeric Scorer]
 
 
-2.2 Metodologi & Alasan One to Many (Dummy Encoding):Algoritma regresi membutuhkan input numerik. Node ini memecah kolom teks Fuel_Type menjadi vektor biner:Fuel_Type_Diesel (1/0)Fuel_Type_Petrol (1/0)Partitioning (Validasi):Pembagian data 80:20 dilakukan secara acak (stratified sampling) untuk mencegah overfitting (model menghafal jawaban).
+### 2.2 Metodologi & Alasan One to Many (Dummy Encoding):Algoritma regresi membutuhkan input numerik. Node ini memecah kolom teks Fuel_Type menjadi vektor biner:Fuel_Type_Diesel (1/0)Fuel_Type_Petrol (1/0)Partitioning (Validasi):Pembagian data 80:20 dilakukan secara acak (stratified sampling) untuk mencegah overfitting (model menghafal jawaban).
 
-💡 2.3 Evaluasi HasilBerdasarkan output node Numeric Scorer:$R^2$ Score (Akurasi): 0.86 (Contoh).Interpretasi: 86% variasi harga mobil berhasil dijelaskan oleh model ini.Koefisien Regresi:Age_08_04: Bernilai negatif besar. (Faktor depresiasi terkuat).HP (Horsepower): Bernilai positif. (Menambah nilai jual).
-
-Tentu, revisi diterima! Perubahan sumbu ini justru menarik karena mengubah sudut pandang analisis dari "Seberapa capek mobilnya? (KM vs Age)" menjadi "Bagaimana spesifikasi performa mobilnya? (HP vs Weight)".
-
-Berikut adalah Revisi BAB 3 yang sudah disesuaikan dengan visualisasi baru Anda (HP vs Weight). Silakan ganti BAB 3 yang lama dengan yang ini di file .md Anda.
-
+### 💡 2.3 Evaluasi HasilBerdasarkan output node Numeric Scorer:$R^2$ Score (Akurasi): 0.86 (Contoh).Interpretasi: 86% variasi harga mobil berhasil dijelaskan oleh model ini.Koefisien Regresi:Age_08_04: Bernilai negatif besar. (Faktor depresiasi terkuat).HP (Horsepower): Bernilai positif. (Menambah nilai jual).
 
 ## 🧩 BAB 3: Klasterisasi Stok 
 *Mengelompokkan stok mobil berdasarkan profil performa dan dimensi fisik.*
 
 ### 3.1 Alur Clustering (k-Means)
-mermaid
+
 graph LR
     Input --> Norm[⚖ Normalizer]
     Norm --> KMeans[🎯 k-Means (k=3)]
     KMeans --> Color[🎨 Color Manager]
     Color --> Plot[📈 Scatter Plot (HP vs Weight)]
-3.2 Metodologi Penting: Normalisasi
+
+### 3.2 Metodologi Penting: Normalisasi
 Node Normalizer sangat krusial dalam analisis ini.
 
 Tantangan Data:
@@ -62,7 +60,7 @@ HP (Tenaga): Berkisar antara 69 - 110 HP.
 
 Solusi: Tanpa normalisasi, algoritma k-Means akan bias total ke arah Weight karena angkanya ribuan. Normalizer menyamakan "derajat kepentingan" kedua variabel ini menjadi skala setara (0-1).
 
-💡 3.3 Analisis Hasil Segmentasi (HP vs Weight)
+### 💡 3.3 Analisis Hasil Segmentasi (HP vs Weight)
 Scatter Plot dengan sumbu Y (Vertikal) = HP dan sumbu X (Horizontal) = Weight memperlihatkan pola distribusi fisik mobil:
 
 Pola Korelasi: Terlihat tren positif; semakin berat mobil (bergerak ke kanan), tenaga kuda cenderung semakin tinggi (bergerak ke atas). Ini logis karena bodi yang berat membutuhkan mesin yang lebih kuat.
@@ -106,7 +104,6 @@ Untuk melakukan eksplorasi data yang komprehensif, alur kerja di KNIME dirancang
 2.  *Jalur Statistik (Kanan):* Fokus pada perhitungan matematis menggunakan data numerik murni.
 
 ### Diagram Alur Node
-```mermaid
 graph TD;
     A[📂 CSV Reader] --> B[⚙ Column Filter];
     B --> C[🔠 Number To String];
@@ -117,7 +114,7 @@ graph TD;
     
     B --> G[🔢 Linear Correlation];
 
-4.2. Tahap Preprocessing DataSebelum visualisasi dibuat, data mentah harus disiapkan agar kompatibel dengan plotting engine KNIME.NodeFungsi & Konfigurasi TeknisCSV ReaderInput Data: Membaca file ToyotaCorolla.csv. Memastikan seluruh baris terbaca dengan delimiter yang benar.
+## 4.2. Tahap Preprocessing DataSebelum visualisasi dibuat, data mentah harus disiapkan agar kompatibel dengan plotting engine KNIME.NodeFungsi & Konfigurasi TeknisCSV ReaderInput Data: Membaca file ToyotaCorolla.csv. Memastikan seluruh baris terbaca dengan delimiter yang benar.
 
 Column Filter Seleksi Fitur: Memangkas dataset agar lebih ringan dan fokus. • Include: Price, Age_08_04, KM, HP, Fuel_Type, Automatic, Weight. • Exclude: Atribut identitas (Id, Model) dan atribut lain yang tidak relevan.
 
@@ -132,7 +129,9 @@ ShutterstockGrafik Box Plot memperlihatkan distribusi harga berdasarkan kategori
 Tujuan: Visualisasi "Pamungkas" yang menggabungkan 4 dimensi data sekaligus untuk melihat tren pasar secara holistik.Node: Scatter Plot (Plotly)Konfigurasi 4 Dimensi:Sumbu X (Penyebab): Age_08_04 (Umur Mobil).Sumbu Y (Akibat): Price (Harga Jual).Warna (Kategori): Fuel_Type (Bensin/Diesel).Ukuran (Indikator Tambahan): KM (Jarak Tempuh) atau HP.Interpretasi Hasil:Grafik ini menceritakan pola depresiasi yang kompleks:"Terlihat tren titik-titik yang menurun dari kiri-atas ke kanan-bawah, mengonfirmasi bahwa mobil baru berharga mahal dan mobil tua berharga murah. Namun, adanya bola-bola besar (KM Tinggi) yang posisinya lebih rendah dibanding bola kecil pada umur yang sama menunjukkan bahwa Jarak Tempuh yang tinggi mempercepat penurunan harga, terlepas dari tahun pembuatannya."
 
 
-## 📊 BAB 5: Visualisasi & Data Storytelling 
+## 📊 BAB 5: Visualisasi & Data Storytelling
+
+---
 
 Mengungkap wawasan bisnis melalui visualisasi tingkat lanjut.
 
