@@ -22,7 +22,7 @@ graph LR
 Fungsi & KonfigurasiCSV ReaderMembaca dataset ToyotaCorolla.csv. Separator diset ke koma (,) dan Header Row diaktifkan.Column FilterSeleksi Fitur: Membuang kolom yang tidak relevan secara statistik (Id, Model, Cylinders) dan mempertahankan kolom kunci (Price, Age_08_04, KM, HP, Fuel_Type, Quarterly_Tax).Rule EngineTransformasi Data: Mengubah data kategorikal biner menjadi label deskriptif.  Logika: $Automatic$ = 1 => "Matic", $Automatic$ = 0 => "Manual".
 
 ## BAB 2: Prediksi Harga (Supervised Learning)
-Membangun model Regresi Linear untuk memprediksi harga jual kembali (Resale Value).2.1 Arsitektur ModelTujuan: Menemukan rumus matematika $Y = aX + b$ dimana $Y$ adalah Harga.Code snippetgraph TD.
+- Membangun model Regresi Linear untuk memprediksi harga jual kembali (Resale Value).2.1 Arsitektur ModelTujuan: Menemukan rumus matematika $Y = aX + b$ dimana $Y$ adalah Harga.Code snippetgraph TD.
 ---
 
     Data[Data Bersih] --> Encode[🔢 One to Many]
