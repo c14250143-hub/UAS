@@ -249,6 +249,7 @@ Rule engine:
 
 <img width="1036" height="227" alt="Screenshot 2025-12-10 154727" src="https://github.com/user-attachments/assets/73c1fea0-83c0-4209-af9a-5e3a3f4202f9" />
 
+Dan seterusnya...
 
 Hierarchy = Fuel_Type $\rightarrow$ Status_Transmisi $\rightarrow$ Status_AC.Analisis:Visualisasi menunjukkan bahwa varian Automatic memiliki probabilitas sangat tinggi untuk dilengkapi AC dan Sebaliknya, varian Manual memiliki distribusi fitur yang lebih acak.Insight: Varian Automatic diposisikan sebagai produk "Full Spec".
 
