@@ -285,7 +285,9 @@ Era 2000-2004: Terjadi lonjakan signifikan pada produksi mobil Diesel (area warn
 ## Hasil Visualisasi
 
 # 1. Cluster
+
 <img width="841" height="212" alt="Scatter Plot (CLuster)" src="https://github.com/user-attachments/assets/78940ce4-6976-4be9-a260-90dc7bf06a86" />
+
 a. Scatter Plot (Clustering)
 
 Hasil unsupervised learning (K-Means / DBSCAN)
