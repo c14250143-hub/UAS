@@ -184,12 +184,18 @@ Color Manager Estetika Visual: Menetapkan konsistensi warna untuk setiap kategor
 
 3. Analisis Statistik & Visual
 
-3.1 Analisis Korelasi (Correlation Matrix)Tujuan: Membuktikan secara statistik variabel mana yang memiliki dampak terkuat terhadap harga jual.Node: Linear CorrelationInput: Data numerik murni (sebelum node Number To String).
+3.1 Analisis Korelasi (Correlation Matrix)
+
+Tujuan: Membuktikan secara statistik variabel mana yang memiliki dampak terkuat terhadap harga jual.Node: Linear CorrelationInput: Data numerik murni (sebelum node Number To String).
 
 <img width="385" height="249" alt="Screenshot 2025-12-10 150745" src="https://github.com/user-attachments/assets/7d7ec780-7652-4efc-b799-19bfddb1d14b" />
 
 
-Konfigurasi:Include: Price, Age_08_04, KM, HP, Weight.Exclude: Data Teks (Fuel_Type).Interpretasi Hasil:Visualisasi matriks korelasi menunjukkan hubungan antar variabel. Fokus utama adalah pada pertemuan baris Price dan kolom Age_08_04:"Nilai korelasi yang mendekati -1 (Warna Gelap) mengindikasikan hubungan negatif yang sangat kuat. Artinya, Umur Mobil adalah faktor depresiasi utama; semakin tua mobil, harga turun secara drastis."
+Konfigurasi:
+
+Include: Price, Age_08_04, KM, HP, Weight.
+
+Exclude: Data Teks (Fuel_Type).Interpretasi Hasil:Visualisasi matriks korelasi menunjukkan hubungan antar variabel. Fokus utama adalah pada pertemuan baris Price dan kolom Age_08_04:"Nilai korelasi yang mendekati -1 (Warna Gelap) mengindikasikan hubungan negatif yang sangat kuat. Artinya, Umur Mobil adalah faktor depresiasi utama; semakin tua mobil, harga turun secara drastis."
 
 <img width="1089" height="799" alt="Screenshot 2025-12-10 150659" src="https://github.com/user-attachments/assets/820acede-93bc-4b1b-974a-82d6b34d14fd" />
 
@@ -226,10 +232,55 @@ Grafik ini menceritakan pola depresiasi yang kompleks:"Terlihat tren titik-titik
 Mengungkap wawasan bisnis melalui visualisasi tingkat lanjut.
 
 ## 5.1 Hierarki Fitur (Sunburst Chart)
-Menelusuri keterkaitan antara fitur mewah.Setting Node: Hierarchy = Fuel_Type $\rightarrow$ Status_Transmisi $\rightarrow$ Status_AC.Analisis:Visualisasi menunjukkan bahwa varian Automatic memiliki probabilitas sangat tinggi untuk dilengkapi AC dan Sebaliknya, varian Manual memiliki distribusi fitur yang lebih acak.Insight: Varian Automatic diposisikan sebagai produk "Full Spec".
+Menelusuri keterkaitan antara fitur mewah.
+
+<img width="1373" height="370" alt="Screenshot 2025-12-10 154453" src="https://github.com/user-attachments/assets/754f9a03-d978-46fe-905f-305d6b6a8620" />
+
+
+Setting Node: 
+
+Rule engine:
+
+<img width="1030" height="217" alt="Screenshot 2025-12-10 154712" src="https://github.com/user-attachments/assets/b5f3549d-4161-4e78-b9a0-10e80dd3bc4c" />
+
+<img width="1041" height="221" alt="Screenshot 2025-12-10 154653" src="https://github.com/user-attachments/assets/31cdcf02-d830-446d-b227-6a2a87ea1430" />
+
+<img width="1039" height="221" alt="Screenshot 2025-12-10 154744" src="https://github.com/user-attachments/assets/b7c38904-4296-4d0d-b574-9b1322cc02b2" />
+
+<img width="1036" height="227" alt="Screenshot 2025-12-10 154727" src="https://github.com/user-attachments/assets/73c1fea0-83c0-4209-af9a-5e3a3f4202f9" />
+
+
+Hierarchy = Fuel_Type $\rightarrow$ Status_Transmisi $\rightarrow$ Status_AC.Analisis:Visualisasi menunjukkan bahwa varian Automatic memiliki probabilitas sangat tinggi untuk dilengkapi AC dan Sebaliknya, varian Manual memiliki distribusi fitur yang lebih acak.Insight: Varian Automatic diposisikan sebagai produk "Full Spec".
 
 ## 5.2 Evolusi Stok (Stacked Area Chart)
-Melihat tren manufaktur berdasarkan tahun pembuatan.Setting Node: GroupBy (Year) $\rightarrow$ Pivoting (Fuel) $\rightarrow$ Stacked Area Chart.Analisis:Era 1998-1999: Pasar didominasi total oleh mesin Petrol (Bensin).Era 2000-2004: Terjadi lonjakan signifikan pada produksi mobil Diesel (area warna gelap melebar).Insight: Data mencerminkan perubahan tren pasar Eropa yang mulai beralih ke mesin Diesel efisien pada awal milenium.
+Melihat tren manufaktur berdasarkan tahun pembuatan.
+
+<img width="484" height="120" alt="Screenshot 2025-12-10 153722" src="https://github.com/user-attachments/assets/b9114a1d-0c78-437e-b6ad-1f126a8d8a5c" />
+
+### Setting Node: 
+
+#### Konfigurasi GroupBy:
+
+<img width="1141" height="794" alt="Screenshot 2025-12-10 153821" src="https://github.com/user-attachments/assets/95be04ac-82c8-4ff2-9cfb-ec8d7be38ef8" />
+
+##### Konfigurasi Pivoting:
+
+<img width="1173" height="794" alt="Screenshot 2025-12-10 153839" src="https://github.com/user-attachments/assets/c8cae4ff-561e-4078-b08f-2e7e09ff3918" />
+
+##### Konfigurasi Missing value data yang tidak tersedia:
+
+<img width="1004" height="260" alt="Screenshot 2025-12-10 153853" src="https://github.com/user-attachments/assets/f40233b7-1810-4951-a4aa-3b9a7f09f1c9" />
+
+##### Konfigurasi Number to String:
+
+<img width="662" height="379" alt="Screenshot 2025-12-10 153910" src="https://github.com/user-attachments/assets/f2e975d1-5520-4743-98af-1716f45416a3" />
+
+
+GroupBy (Year) $\rightarrow$ Pivoting (Fuel) $\rightarrow$ Stacked Area Chart.
+
+
+Analisis:Era 1998-1999: Pasar didominasi total oleh mesin Petrol (Bensin).
+Era 2000-2004: Terjadi lonjakan signifikan pada produksi mobil Diesel (area warna gelap melebar).Insight: Data mencerminkan perubahan tren pasar Eropa yang mulai beralih ke mesin Diesel efisien pada awal milenium.
 
 ## Hasil Visualisasi
 
