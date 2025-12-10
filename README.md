@@ -30,18 +30,23 @@ Membangun model Regresi Linear untuk memprediksi harga jual kembali (Resale Valu
 <img width="463" height="166" alt="Screenshot 2025-12-10 143730" src="https://github.com/user-attachments/assets/d7bc4af5-3432-453d-8e1c-97ac09bc5aee" />
 
 Instruski konfigurasi 🔢 One to Many:
+
 <img width="699" height="696" alt="Screenshot 2025-12-10 143823" src="https://github.com/user-attachments/assets/be3a4b39-9963-4cfe-b47b-41b8872b0d4c" />
 
 Instruksi konfigurasi ✂ Partitioning 80:20:
+
 <img width="699" height="591" alt="Screenshot 2025-12-10 144030" src="https://github.com/user-attachments/assets/e22fe532-806c-4f55-b644-f9ba050cae76" />
 
-Partioning -> Predictor (Linear & Regresion Predictor)
+Partioning -> Predictor (Linear & Regresion Predictor):
+
 <img width="417" height="202" alt="Screenshot 2025-12-10 144136" src="https://github.com/user-attachments/assets/94e3e692-6f37-4edb-8244-bccfa2367267" />
 
 Konfigurasi Linear regresion predictor:
+
 <img width="1129" height="805" alt="Screenshot 2025-12-10 144338" src="https://github.com/user-attachments/assets/c669fd60-d32f-44e7-aa3a-ee9c385db448" />
 
 Konfigurasi regresion predictor:
+
 <img width="750" height="354" alt="Screenshot 2025-12-10 144526" src="https://github.com/user-attachments/assets/5134aca4-3db1-4261-bbe2-b6c9370e166a" />
 
 
