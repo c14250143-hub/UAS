@@ -28,7 +28,7 @@ Fungsi & KonfigurasiCSV ReaderMembaca dataset ToyotaCorolla.csv. Separator diset
 ---
 
 ## BAB 2: Prediksi Harga (Supervised Learning)
-Membangun model Regresi Linear untuk memprediksi harga jual kembali (Resale Value).2.1 Arsitektur ModelTujuan: Menemukan rumus matematika $Y = aX + b$ dimana $Y$ adalah Harga.Code snippetgraph TD.
+Membangun model Regresi Linear untuk memprediksi harga jual kembali (Resale Value).2.1 Arsitektur ModelTujuan: Menemukan rumus matematika $Y = aX + b$ dimana $Y$ adalah Harga.
 
 
 <img width="463" height="166" alt="Screenshot 2025-12-10 143730" src="https://github.com/user-attachments/assets/d7bc4af5-3432-453d-8e1c-97ac09bc5aee" />
@@ -54,7 +54,7 @@ Konfigurasi regresion predictor:
 <img width="750" height="354" alt="Screenshot 2025-12-10 144526" src="https://github.com/user-attachments/assets/5134aca4-3db1-4261-bbe2-b6c9370e166a" />
 
 
-
+Code snippetgraph TD.
 
     Data[Data Bersih] --> Encode[🔢 One to Many]
     Encode --> Split[✂ Partitioning 80:20]
