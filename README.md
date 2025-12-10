@@ -288,7 +288,7 @@ Tujuan:
 
 Untuk mengetahui apakah data tersebut masuk normal, skewed, atau multimodal
 
-<img width="841" height="356" alt="Heatmap (korelasi linear)" src="https://github.com/user-attachments/assets/bb3e89a0-1b43-4d79-a81c-1397451a1320" />
+<img width="821" height="323" alt="Screenshot 2025-12-10 095107" src="https://github.com/user-attachments/assets/c6de5fb2-7cb5-47a8-8193-c66f5b6b4350" />
 
 c. Heatmap Korelasi
 
