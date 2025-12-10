@@ -1,3 +1,7 @@
+## Nama pembuat dan Nomor urut Peserta (NRP):
+- Cainneth Vionaldo Tjiandra C14250143
+- Justin Nathanael Juswandy C14250091
+
 ## 📋 Executive Summary
 Laporan ini menyajikan analisis mendalam terhadap data penjualan mobil bekas Toyota Corolla menggunakan metodologi *CRISP-DM* (Cross-Industry Standard Process for Data Mining). 
 
