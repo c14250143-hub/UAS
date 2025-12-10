@@ -72,6 +72,8 @@ Berdasarkan output node Numeric Scorer:$R^2$ Score (Akurasi): 0.86 (Contoh).Inte
 ## 🧩 BAB 3: Klasterisasi Stok 
 *Mengelompokkan stok mobil berdasarkan profil performa dan dimensi fisik.*
 
+<img width="660" height="149" alt="Screenshot 2025-12-10 151454" src="https://github.com/user-attachments/assets/783727ff-f89d-45d7-a4f4-172f0db10aa6" />
+
 ### 3.1 Alur Clustering (k-Means)
 
 graph LR
@@ -90,6 +92,11 @@ Weight (Berat): Berkisar antara 1.000 kg - 1.600 kg.
 HP (Tenaga): Berkisar antara 69 - 110 HP.
 
 Solusi: Tanpa normalisasi, algoritma k-Means akan bias total ke arah Weight karena angkanya ribuan. Normalizer menyamakan "derajat kepentingan" kedua variabel ini menjadi skala setara (0-1).
+
+Konfigurasi Normalizer:
+
+<img width="665" height="633" alt="Screenshot 2025-12-10 151653" src="https://github.com/user-attachments/assets/36bddf2a-fce8-41dd-aea0-72a06a0e8664" />
+
 
 ### 💡 3.3 Analisis Hasil Segmentasi (HP vs Weight)
 Scatter Plot dengan sumbu Y (Vertikal) = HP dan sumbu X (Horizontal) = Weight memperlihatkan pola distribusi fisik mobil:
@@ -147,25 +154,46 @@ graph TD;
     
     B --> G[🔢 Linear Correlation];
 
-## 4.2. Tahap Preprocessing DataSebelum visualisasi dibuat, data mentah harus disiapkan agar kompatibel dengan plotting engine KNIME.NodeFungsi & Konfigurasi TeknisCSV ReaderInput Data: Membaca file ToyotaCorolla.csv. Memastikan seluruh baris terbaca dengan delimiter yang benar.
+Gambar flow node:
+
+<img width="659" height="338" alt="Screenshot 2025-12-10 145315" src="https://github.com/user-attachments/assets/b15dfdfa-daf4-4d13-8b73-1acf5813da53" />
+
+
+## 4.2. Tahap Preprocessing DataSebelum visualisasi dibuat, data mentah harus disiapkan agar kompatibel dengan plotting engine KNIME.
+
+NodeFungsi & Konfigurasi TeknisCSV ReaderInput Data: Membaca file ToyotaCorolla.csv. Memastikan seluruh baris terbaca dengan delimiter yang benar.
 
 Column Filter Seleksi Fitur: Memangkas dataset agar lebih ringan dan fokus. • Include: Price, Age_08_04, KM, HP, Fuel_Type, Automatic, Weight. • Exclude: Atribut identitas (Id, Model) dan atribut lain yang tidak relevan.
 
-Number To StringTransformasi Tipe Data: Mengubah variabel numerik biner menjadi label kategori agar bisa digunakan sebagai variabel warna/pengelompokan. • Target: Kolom Automatic (0/1 $\rightarrow$ "Manual"/"Auto").
+<img width="668" height="440" alt="Screenshot 2025-12-10 150534" src="https://github.com/user-attachments/assets/912800c6-666a-42c8-89e5-7fac77c7806c" />
+
+
+Number To StringTransformasi Tipe Data: Mengubah variabel numerik biner menjadi label kategori agar bisa digunakan sebagai variabel warna/pengelompokan.
+
+<img width="695" height="624" alt="Screenshot 2025-12-10 150056" src="https://github.com/user-attachments/assets/fd8ba448-83a6-41a2-b09d-cf2d2734f4a9" />
+
 
 Color Manager Estetika Visual: Menetapkan konsistensi warna untuk setiap kategori bahan bakar agar laporan mudah dibaca. • Setting: Fuel_Type. • Mapping: Petrol = Merah 🔴, Diesel = hijau 🟢, CNG = Kuning 🟡  (Contoh).
+
+<img width="979" height="441" alt="Screenshot 2025-12-10 150247" src="https://github.com/user-attachments/assets/b45c7573-32f0-4153-93a7-d422e5a5d16f" />
+
 
 3. Analisis Statistik & Visual
 
 3.1 Analisis Korelasi (Correlation Matrix)Tujuan: Membuktikan secara statistik variabel mana yang memiliki dampak terkuat terhadap harga jual.Node: Linear CorrelationInput: Data numerik murni (sebelum node Number To String).
 
+<img width="385" height="249" alt="Screenshot 2025-12-10 150745" src="https://github.com/user-attachments/assets/7d7ec780-7652-4efc-b799-19bfddb1d14b" />
+
+
 Konfigurasi:Include: Price, Age_08_04, KM, HP, Weight.Exclude: Data Teks (Fuel_Type).Interpretasi Hasil:Visualisasi matriks korelasi menunjukkan hubungan antar variabel. Fokus utama adalah pada pertemuan baris Price dan kolom Age_08_04:"Nilai korelasi yang mendekati -1 (Warna Gelap) mengindikasikan hubungan negatif yang sangat kuat. Artinya, Umur Mobil adalah faktor depresiasi utama; semakin tua mobil, harga turun secara drastis."
 
+<img width="1089" height="799" alt="Screenshot 2025-12-10 150659" src="https://github.com/user-attachments/assets/820acede-93bc-4b1b-974a-82d6b34d14fd" />
 
 
 3.2 Analisis Varian Harga (Box Plot)Tujuan: Menjawab pertanyaan bisnis, "Apakah jenis bahan bakar mempengaruhi harga jual rata-rata?"Node: Box Plot (JavaScript/Local)Konfigurasi:Category Column (Sumbu X): Fuel_Type.Value Column (Sumbu Y): Price.
 
 Konfigurasi Box plot:
+
 <img width="651" height="524" alt="Screenshot 2025-12-10 142600" src="https://github.com/user-attachments/assets/2a32bd18-0bc8-4bc3-b8df-4c07272c2ecd" />
 
 <img width="641" height="519" alt="Screenshot 2025-12-10 143227" src="https://github.com/user-attachments/assets/58f6fd07-15bf-4cda-9f71-4da3f853ee63" />
