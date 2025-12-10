@@ -1,4 +1,4 @@
-<img width="1129" height="805" alt="Screenshot 2025-12-10 144338" src="https://github.com/user-attachments/assets/8b32a4ec-5191-4d0d-bad0-60d018b9cb9d" />## 📋 Executive Summary
+## 📋 Executive Summary
 Laporan ini menyajikan analisis mendalam terhadap data penjualan mobil bekas Toyota Corolla menggunakan metodologi *CRISP-DM* (Cross-Industry Standard Process for Data Mining). 
 
 Proyek ini bertujuan untuk menjawab tiga pertanyaan bisnis utama:
