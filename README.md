@@ -1,4 +1,4 @@
-## 📋 Executive Summary
+<img width="1129" height="805" alt="Screenshot 2025-12-10 144338" src="https://github.com/user-attachments/assets/8b32a4ec-5191-4d0d-bad0-60d018b9cb9d" />## 📋 Executive Summary
 Laporan ini menyajikan analisis mendalam terhadap data penjualan mobil bekas Toyota Corolla menggunakan metodologi *CRISP-DM* (Cross-Industry Standard Process for Data Mining). 
 
 Proyek ini bertujuan untuk menjawab tiga pertanyaan bisnis utama:
@@ -25,6 +25,27 @@ Fungsi & KonfigurasiCSV ReaderMembaca dataset ToyotaCorolla.csv. Separator diset
 
 ## BAB 2: Prediksi Harga (Supervised Learning)
 Membangun model Regresi Linear untuk memprediksi harga jual kembali (Resale Value).2.1 Arsitektur ModelTujuan: Menemukan rumus matematika $Y = aX + b$ dimana $Y$ adalah Harga.Code snippetgraph TD.
+
+
+<img width="463" height="166" alt="Screenshot 2025-12-10 143730" src="https://github.com/user-attachments/assets/d7bc4af5-3432-453d-8e1c-97ac09bc5aee" />
+
+Instruski konfigurasi 🔢 One to Many:
+<img width="699" height="696" alt="Screenshot 2025-12-10 143823" src="https://github.com/user-attachments/assets/be3a4b39-9963-4cfe-b47b-41b8872b0d4c" />
+
+Instruksi konfigurasi ✂ Partitioning 80:20:
+<img width="699" height="591" alt="Screenshot 2025-12-10 144030" src="https://github.com/user-attachments/assets/e22fe532-806c-4f55-b644-f9ba050cae76" />
+
+Partioning -> Predictor (Linear & Regresion Predictor)
+<img width="417" height="202" alt="Screenshot 2025-12-10 144136" src="https://github.com/user-attachments/assets/94e3e692-6f37-4edb-8244-bccfa2367267" />
+
+Konfigurasi Linear regresion predictor:
+<img width="1129" height="805" alt="Screenshot 2025-12-10 144338" src="https://github.com/user-attachments/assets/c669fd60-d32f-44e7-aa3a-ee9c385db448" />
+
+Konfigurasi regresion predictor:
+<img width="750" height="354" alt="Screenshot 2025-12-10 144526" src="https://github.com/user-attachments/assets/5134aca4-3db1-4261-bbe2-b6c9370e166a" />
+
+
+
 
     Data[Data Bersih] --> Encode[🔢 One to Many]
     Encode --> Split[✂ Partitioning 80:20]
@@ -71,6 +92,8 @@ Scatter Plot dengan sumbu Y (Vertikal) = HP dan sumbu X (Horizontal) = Weight me
 Pola Korelasi: Terlihat tren positif; semakin berat mobil (bergerak ke kanan), tenaga kuda cenderung semakin tinggi (bergerak ke atas). Ini logis karena bodi yang berat membutuhkan mesin yang lebih kuat.
 
 Interpretasi 3 Cluster yang Terbentuk:
+
+<img width="841" height="212" alt="Scatter Plot (CLuster)" src="https://github.com/user-attachments/assets/78940ce4-6976-4be9-a260-90dc7bf06a86" />
 
 🔴 Cluster 0 (Economy / City Car):
 
@@ -125,13 +148,40 @@ Column Filter Seleksi Fitur: Memangkas dataset agar lebih ringan dan fokus. • 
 
 Number To StringTransformasi Tipe Data: Mengubah variabel numerik biner menjadi label kategori agar bisa digunakan sebagai variabel warna/pengelompokan. • Target: Kolom Automatic (0/1 $\rightarrow$ "Manual"/"Auto").
 
-Color Manager Estetika Visual: Menetapkan konsistensi warna untuk setiap kategori bahan bakar agar laporan mudah dibaca. • Setting: Fuel_Type. • Mapping: Petrol = Merah 🔴, Diesel = hijau 🟢, CNG = Kuning 🟡  (Contoh).3. Analisis Statistik & Visual3.1 Analisis Korelasi (Correlation Matrix)Tujuan: Membuktikan secara statistik variabel mana yang memiliki dampak terkuat terhadap harga jual.Node: Linear CorrelationInput: Data numerik murni (sebelum node Number To String).
+Color Manager Estetika Visual: Menetapkan konsistensi warna untuk setiap kategori bahan bakar agar laporan mudah dibaca. • Setting: Fuel_Type. • Mapping: Petrol = Merah 🔴, Diesel = hijau 🟢, CNG = Kuning 🟡  (Contoh).
 
-Konfigurasi:Include: Price, Age_08_04, KM, HP, Weight.Exclude: Data Teks (Fuel_Type).Interpretasi Hasil:Visualisasi matriks korelasi menunjukkan hubungan antar variabel. Fokus utama adalah pada pertemuan baris Price dan kolom Age_08_04:"Nilai korelasi yang mendekati -1 (Warna Gelap) mengindikasikan hubungan negatif yang sangat kuat. Artinya, Umur Mobil adalah faktor depresiasi utama; semakin tua mobil, harga turun secara drastis."3.2 Analisis Varian Harga (Box Plot)Tujuan: Menjawab pertanyaan bisnis, "Apakah jenis bahan bakar mempengaruhi harga jual rata-rata?"Node: Box Plot (JavaScript/Local)Konfigurasi:Category Column (Sumbu X): Fuel_Type.Value Column (Sumbu Y): Price.Interpretasi Hasil:
+3. Analisis Statistik & Visual
 
-Box Plot memperlihatkan distribusi harga berdasarkan kategori:"Dengan melihat garis tengah (Median) pada setiap kotak, kita dapat membandingkan harga pasar. Jika kotak Diesel posisinya lebih tinggi daripada Petrol, ini membuktikan bahwa rata-rata harga mobil Diesel bekas lebih mahal. Titik-titik yang berada jauh di luar garis kumis (whiskers) menandakan Outlier atau mobil dengan harga tidak wajar."3.3 Analisis Tren Multi-Dimensi (Scatter Plot)
+3.1 Analisis Korelasi (Correlation Matrix)Tujuan: Membuktikan secara statistik variabel mana yang memiliki dampak terkuat terhadap harga jual.Node: Linear CorrelationInput: Data numerik murni (sebelum node Number To String).
 
-Tujuan: Visualisasi "Pamungkas" yang menggabungkan 4 dimensi data sekaligus untuk melihat tren pasar secara holistik.Node: Scatter Plot (Plotly)Konfigurasi 4 Dimensi:Sumbu X (Penyebab): Age_08_04 (Umur Mobil).Sumbu Y (Akibat): Price (Harga Jual).Warna (Kategori): Fuel_Type (Bensin/Diesel).Ukuran (Indikator Tambahan): KM (Jarak Tempuh) atau HP.Interpretasi Hasil:Grafik ini menceritakan pola depresiasi yang kompleks:"Terlihat tren titik-titik yang menurun dari kiri-atas ke kanan-bawah, mengonfirmasi bahwa mobil baru berharga mahal dan mobil tua berharga murah. Namun, adanya bola-bola besar (KM Tinggi) yang posisinya lebih rendah dibanding bola kecil pada umur yang sama menunjukkan bahwa Jarak Tempuh yang tinggi mempercepat penurunan harga, terlepas dari tahun pembuatannya."
+Konfigurasi:Include: Price, Age_08_04, KM, HP, Weight.Exclude: Data Teks (Fuel_Type).Interpretasi Hasil:Visualisasi matriks korelasi menunjukkan hubungan antar variabel. Fokus utama adalah pada pertemuan baris Price dan kolom Age_08_04:"Nilai korelasi yang mendekati -1 (Warna Gelap) mengindikasikan hubungan negatif yang sangat kuat. Artinya, Umur Mobil adalah faktor depresiasi utama; semakin tua mobil, harga turun secara drastis."
+
+
+
+3.2 Analisis Varian Harga (Box Plot)Tujuan: Menjawab pertanyaan bisnis, "Apakah jenis bahan bakar mempengaruhi harga jual rata-rata?"Node: Box Plot (JavaScript/Local)Konfigurasi:Category Column (Sumbu X): Fuel_Type.Value Column (Sumbu Y): Price.
+
+Konfigurasi Box plot:
+<img width="651" height="524" alt="Screenshot 2025-12-10 142600" src="https://github.com/user-attachments/assets/2a32bd18-0bc8-4bc3-b8df-4c07272c2ecd" />
+
+<img width="641" height="519" alt="Screenshot 2025-12-10 143227" src="https://github.com/user-attachments/assets/58f6fd07-15bf-4cda-9f71-4da3f853ee63" />
+
+Interpretasi Hasil:
+
+
+<img width="841" height="222" alt="Box Plot (statistik 2)" src="https://github.com/user-attachments/assets/5ca98e8a-f6e7-46c0-8c20-025853de2b5b" />
+
+<img width="841" height="222" alt="Box Plot (statistik)" src="https://github.com/user-attachments/assets/7d6a4af8-b3f3-446f-bb2b-0162c3f11139" />
+
+Box Plot memperlihatkan distribusi harga berdasarkan kategori:"Dengan melihat garis tengah (Median) pada setiap kotak, kita dapat membandingkan harga pasar. Jika kotak Diesel posisinya lebih tinggi daripada Petrol, ini membuktikan bahwa rata-rata harga mobil Diesel bekas lebih mahal. Titik-titik yang berada jauh di luar garis kumis (whiskers) menandakan Outlier atau mobil dengan harga tidak wajar."
+
+3.3 Analisis Tren Multi-Dimensi (Scatter Plot)
+
+Tujuan: Visualisasi "Pamungkas" yang menggabungkan 4 dimensi data sekaligus untuk melihat tren pasar secara holistik.Node: Scatter Plot (Plotly)
+
+Konfigurasi 4 Dimensi:Sumbu X (Penyebab): Age_08_04 (Umur Mobil).Sumbu Y (Akibat): Price (Harga Jual).Warna (Kategori): Fuel_Type (Bensin/Diesel).Ukuran (Indikator Tambahan): KM (Jarak Tempuh) atau HP.
+
+Interpretasi Hasil:
+Grafik ini menceritakan pola depresiasi yang kompleks:"Terlihat tren titik-titik yang menurun dari kiri-atas ke kanan-bawah, mengonfirmasi bahwa mobil baru berharga mahal dan mobil tua berharga murah. Namun, adanya bola-bola besar (KM Tinggi) yang posisinya lebih rendah dibanding bola kecil pada umur yang sama menunjukkan bahwa Jarak Tempuh yang tinggi mempercepat penurunan harga, terlepas dari tahun pembuatannya."
 
 ---
 
