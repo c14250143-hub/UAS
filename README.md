@@ -3,7 +3,7 @@
 - Justin Nathanael Juswandy C14250091
 
 ## 📋 Executive Summary
-Laporan ini menyajikan analisis mendalam terhadap data penjualan mobil bekas Toyota Corolla menggunakan metodologi *CRISP-DM* (Cross-Industry Standard Process for Data Mining). 
+Laporan ini menyajikan analisis mendalam terhadap data penjualan mobil bekas Toyota Corolla menggunakan metodologi *CRISP-DM* (Cross-Industry Strd Process for Data Mining). 
 
 Proyek ini bertujuan untuk menjawab tiga pertanyaan bisnis utama:
 1.  *Prediksi Harga:* Bagaimana kita bisa mengestimasi harga jual wajar berdasarkan spesifikasi teknis?
@@ -128,7 +128,7 @@ Profil: Kemungkinan besar varian mesin 1.3 Liter. Cocok untuk target pasar hemat
 
 Ciri: Berat sedang & HP menengah (97-110 HP).
 
-Profil: Varian standar 1.6 Liter yang seimbang antara tenaga dan kenyamanan.
+Profil: Varian str 1.6 Liter yang seimbang antara tenaga dan kenyamanan.
 
 🟢 Cluster 2 (Heavy Duty / Diesel):
 
@@ -138,7 +138,7 @@ Profil: Ini biasanya adalah varian Station Wagon atau mesin Diesel (blok mesin d
 
 
 ### Apa yang berubah di analisis ini?
-1.  *Logika Clustering:* Sekarang Anda mengelompokkan mobil berdasarkan *"Tipe Mesin & Bodi"*, bukan lagi berdasarkan "Umur/Pemakaian".
+1.  *Logika Clustering:* Sekarang  mengelompokkan mobil berdasarkan *"Tipe Mesin & Bodi"*, bukan lagi berdasarkan "Umur/Pemakaian".
 2.  *Cerita Bisnis:* Hasil ini berguna bagi dealer untuk mengetahui Product Mix merek
 
 
@@ -222,7 +222,7 @@ Interpretasi Hasil:
 
 <img width="841" height="222" alt="Box Plot (statistik)" src="https://github.com/user-attachments/assets/7d6a4af8-b3f3-446f-bb2b-0162c3f11139" />
 
-Box Plot memperlihatkan distribusi harga berdasarkan kategori:"Dengan melihat garis tengah (Median) pada setiap kotak, kita dapat membandingkan harga pasar. Jika kotak Diesel posisinya lebih tinggi daripada Petrol, ini membuktikan bahwa rata-rata harga mobil Diesel bekas lebih mahal. Titik-titik yang berada jauh di luar garis kumis (whiskers) menandakan Outlier atau mobil dengan harga tidak wajar."
+Box Plot memperlihatkan distribusi harga berdasarkan kategori:"Dengan melihat garis tengah (Median) pada setiap kotak, kita dapat membandingkan harga pasar. Jika kotak Diesel posisinya lebih tinggi daripada Petrol, ini membuktikan bahwa rata-rata harga mobil Diesel bekas lebih mahal. Titik-titik yang berada jauh di luar garis kumis (whiskers) menkan Outlier atau mobil dengan harga tidak wajar."
 
 3.3 Analisis Tren Multi-Dimensi (Scatter Plot)
 
