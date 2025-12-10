@@ -147,10 +147,21 @@ Melihat tren manufaktur berdasarkan tahun pembuatan.Setting Node: GroupBy (Year)
 ## Hasil Visualisasi
 
 # 1. Cluster
-
-<img width="1201" height="214" alt="Stacked Area Chart (data Analisa hasil penjualan per tahun)" src="https://github.com/user-attachments/assets/7de5cdf4-f5ce-4735-82c4-9b7effcf278e" />
-
 <img width="841" height="212" alt="Scatter Plot (CLuster)" src="https://github.com/user-attachments/assets/78940ce4-6976-4be9-a260-90dc7bf06a86" />
+a. Scatter Plot (Clustering)
+
+Hasil unsupervised learning (K-Means / DBSCAN)
+Setiap titik adalah 1 mobil / 1 unit data
+Warna berbeda = cluster berbeda berdasarkan fitur seperti:
+- Harga
+- Tenaga mesin
+- Kapasitas
+- Fitur
+- Penjualan
+
+Tujuan analisis cluster:
+- Membagikan kelompok mobil berdasarkan karakteristik mereka
+- Menemukan segmen pasar (low-end, mid-end, premium)
 
 
 
@@ -160,7 +171,34 @@ Melihat tren manufaktur berdasarkan tahun pembuatan.Setting Node: GroupBy (Year)
 
 <img width="841" height="356" alt="Scatter Plot (prediksi)" src="https://github.com/user-attachments/assets/f2acab8f-b60e-40b8-be28-65e50e230bbb" />
 
+a. Scatter Plot (Prediksi Linear/Polynomial)
+
+Gambar tersebut memperlihatkan hubungan antara harga dan variabel lain:
+- Mileage
+- Engine Size
+- Horsepower
+- Rating
+
+Titik biru = data asli
+Garis merah = hasil prediksi model (regresi)
+
+Tujuan:
+
+Untuk melihat korelasi harga dengan spesifikasi
+
+Semakin mendekati garis prediksi artinya model semakin akurat
+
+
 <img width="678" height="366" alt="Tabel Skor (Prediksi)" src="https://github.com/user-attachments/assets/4f5ec6ca-d9c0-44f8-a426-f2a456e76988" />
+
+b. Tabel Skor (Prediksi)
+
+Berisi evaluasi model:
+
+R² → seberapa besar model menjelaskan variasi data
+
+RMSE / MAE → error prediksi
+Semakin tinggi R² dan semakin kecil RMSE, model semakin bagus.
 
 
 
@@ -168,9 +206,32 @@ Melihat tren manufaktur berdasarkan tahun pembuatan.Setting Node: GroupBy (Year)
 
 <img width="841" height="356" alt="Scatter Plot (statistic)" src="https://github.com/user-attachments/assets/25ede60a-3ed8-48d3-813a-94770def0f8f" />
 
-<img width="841" height="356" alt="Box Plot (statistik2)" src="https://github.com/user-attachments/assets/1d56540e-25b8-4523-bce9-cc8ad182352a" />
+a. Scatter Plot
 
-<img width="841" height="356" alt="Box Plot (statistic)" src="https://github.com/user-attachments/assets/b27d8219-fd25-45fa-b046-84cef1029b3d" />
+Menunjukkan hubungan dua variable, contoh:
+- Penjualan vs Harga
+- Mesin vs Konsumsi BBM
+
+Digunakan untuk melihat trend linear, outlier, dan pola hubungan
+
+<img width="841" height="222" alt="Box Plot (statistik 2)" src="https://github.com/user-attachments/assets/5ca98e8a-f6e7-46c0-8c20-025853de2b5b" />
+
+<img width="841" height="222" alt="Box Plot (statistik)" src="https://github.com/user-attachments/assets/7d6a4af8-b3f3-446f-bb2b-0162c3f11139" />
+
+b. Box Plot
+
+Menampilkan distribusi statistik:
+- Median
+- Quartile
+- Outlier
+
+Box plot membandingkan kategori mobil, untuk melihat apakah ada kategori dengan harga lebih tinggi, konsumsi BBM lebih besar, dll.
+
+Tujuan:
+- Mengetahui sebaran data
+- Menemukan data ekstrem
+- Membandingkan antar kategori
+
 
 
 
@@ -178,9 +239,28 @@ Melihat tren manufaktur berdasarkan tahun pembuatan.Setting Node: GroupBy (Year)
 
 <img width="1201" height="214" alt="Bar Chart (perbandingan penjualan)" src="https://github.com/user-attachments/assets/19295562-4a28-4188-b5f8-3e3f3084e1a3" />
 
+a. Bar Chart
+
+Menampilkan nilai penjualan per kategori/per model
+Digunakan untuk:
+- Kategori mana yang paling laku
+- Kategori mana yang paling rendah
+
 <img width="1201" height="214" alt="Pie Chart (perbandingan penjualan)" src="https://github.com/user-attachments/assets/c500809d-f6d6-4edf-aa31-d7c141645b7a" />
 
+b. Pie Chart
+
+Tujuannya untuk memperlihatkan proporsi kontribusi setiap kategori terhadap total penjualan
+
+
 <img width="1201" height="214" alt="Stacked Area Chart (data Analisa hasil penjualan per tahun)" src="https://github.com/user-attachments/assets/7de5cdf4-f5ce-4735-82c4-9b7effcf278e" />
+
+
+c. Stacked Area Chart (Penjualan per Tahun)
+
+Chart ini memperlihatkan perubahan total penjualan mobil dari tahun ke tahun
+Warna berbeda = kategori atau model mobil yang berbeda
+Tujuan: untuk melihat hasil pertumbuhan, penurunan, dan kontribusi setiap kategori terhadap total penjualan
 
 
 
@@ -188,23 +268,35 @@ Melihat tren manufaktur berdasarkan tahun pembuatan.Setting Node: GroupBy (Year)
 
 <img width="1535" height="216" alt="Score (prediksi data manufaktur)" src="https://github.com/user-attachments/assets/1616d1e3-9583-4dc6-8ff9-d3ad497c4b00" />
 
+a. Table Score (Prediksi Manufaktur)
+
+Mirip bagian prediksi harga:
+Untuk mengukur akurasi model prediksi jumlah produksi atau penjualan
+
+
 <img width="841" height="356" alt="Histogram (produksi mobil)" src="https://github.com/user-attachments/assets/a03980cb-a202-45d5-876b-b263a5e26ea8" />
+
+b. Histogram
+
+Menunjukkan distribusi:
+
+- Produksi mobil per tahun/unit
+- Penjualan
+- Fitur lainnya
+
+Tujuan:
+
+Untuk mengetahui apakah data tersebut masuk normal, skewed, atau multimodal
 
 <img width="841" height="356" alt="Heatmap (korelasi linear)" src="https://github.com/user-attachments/assets/bb3e89a0-1b43-4d79-a81c-1397451a1320" />
 
-<img width="841" height="356" alt="Scatter Plot (statistic)" src="https://github.com/user-attachments/assets/25ede60a-3ed8-48d3-813a-94770def0f8f" />
+c. Heatmap Korelasi
 
-<img width="841" height="356" alt="Box Plot (statistik2)" src="https://github.com/user-attachments/assets/1d56540e-25b8-4523-bce9-cc8ad182352a" />
+Menampilkan hubungan antar variabel secara numerik.
+Misal:
+Harga sangat dipengaruhi horsepower artinya korelasi tinggi
+Fitur interior kurang berpengaruh artinya korelasi rendah
 
-<img width="841" height="356" alt="Box Plot (statistic)" src="https://github.com/user-attachments/assets/b27d8219-fd25-45fa-b046-84cef1029b3d" />
-
-<img width="841" height="356" alt="Scatter Plot (prediksi2)" src="https://github.com/user-attachments/assets/8d1f6449-c85f-4351-abe0-9dcd1dfd81d4" />
-
-<img width="841" height="356" alt="Scatter Plot (prediksi)" src="https://github.com/user-attachments/assets/f2acab8f-b60e-40b8-be28-65e50e230bbb" />
-
-<img width="678" height="366" alt="Tabel Skor (Prediksi)" src="https://github.com/user-attachments/assets/4f5ec6ca-d9c0-44f8-a426-f2a456e76988" />
-
-<img width="841" height="212" alt="Scatter Plot (CLuster)" src="https://github.com/user-attachments/assets/78940ce4-6976-4be9-a260-90dc7bf06a86" />
 
 
 
@@ -215,3 +307,26 @@ Melihat tren manufaktur berdasarkan tahun pembuatan.Setting Node: GroupBy (Year)
 <img width="998" height="701" alt="Sunburst Chart (data fasilitas mobil 2)" src="https://github.com/user-attachments/assets/37899289-2517-43e6-bf5b-9d9a6159df87" />
 
 <img width="998" height="701" alt="Sunburst Chart (data fasilitas mobil 1)" src="https://github.com/user-attachments/assets/a52e915d-eb43-4dd6-b6e6-4650dc31f0a2" />
+
+a. Fasilitas (Sunburst Chart)
+
+Sunburst chart memvisualisasikan hierarki fitur mobil.
+
+Biasanya struktur seperti:
+- Fasilitas
+Interior
+- AC
+- Kulit
+- Layar
+Eksterior
+- Lampu LED
+- Sensor
+Safety
+- ABS
+- Airbag
+- ESP
+
+Tujuan:
+- Menjelaskan proporsi fitur per kategori
+- Memberikan gambaran hierarki fitur paling sering muncul
+- Membandingkan fitur antar segmen mobil
