@@ -97,10 +97,17 @@ HP (Tenaga): Berkisar antara 69 - 110 HP.
 
 Solusi: Tanpa normalisasi, algoritma k-Means akan bias total ke arah Weight karena angkanya ribuan. Normalizer menyamakan "derajat kepentingan" kedua variabel ini menjadi skala setara (0-1).
 
-Konfigurasi Normalizer:
+#### Konfigurasi Normalizer:
 
 <img width="665" height="633" alt="Screenshot 2025-12-10 151653" src="https://github.com/user-attachments/assets/36bddf2a-fce8-41dd-aea0-72a06a0e8664" />
 
+#### Konfigurasi K-means:
+
+<img width="986" height="711" alt="Screenshot 2025-12-10 155448" src="https://github.com/user-attachments/assets/ab596931-0981-4d03-9f5b-60a974f1fc03" />
+
+#### Konfigurasi Rule Engine Sebagai Penamaan:
+
+<img width="1071" height="224" alt="Screenshot 2025-12-10 155635" src="https://github.com/user-attachments/assets/b1881f6d-ede7-4b5c-bec4-4bd1a112c145" />
 
 ### 💡 3.3 Analisis Hasil Segmentasi (HP vs Weight)
 Scatter Plot dengan sumbu Y (Vertikal) = HP dan sumbu X (Horizontal) = Weight memperlihatkan pola distribusi fisik mobil:
